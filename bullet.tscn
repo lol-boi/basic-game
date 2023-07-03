@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://butqdnf54nauh"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_xytjo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4g6n"]
+radius = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_jrqvd"]
+radius = 3.0
+height = 6.0
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_xytjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n4g6n")
+debug_color = Color(0.945098, 0.156863, 0.447059, 0.419608)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_jrqvd")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 4
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+fract_delta = false
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+angular_velocity_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 8.0
