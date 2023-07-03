@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp50m5nkrgnbl"]
+[gd_scene load_steps=5 format=3 uid="uid://dteobuff2unhx"]
 
 [ext_resource type="Texture2D" uid="uid://b7f76lxgo2h73" path="res://icon.svg" id="1_3x7ki"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_6s35o"]
+[ext_resource type="PackedScene" uid="uid://butqdnf54nauh" path="res://bullet.tscn" id="2_k4y5x"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbox3"]
 
@@ -10,8 +11,8 @@ position = Vector2(252, 388)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-47, -145)
-motion_mode = 1
 script = ExtResource("1_6s35o")
+Bullet = ExtResource("2_k4y5x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
 position = Vector2(-22, 32)
@@ -30,3 +31,6 @@ position = Vector2(25, 0)
 rotation = 1.56536
 scale = Vector2(-4, -56)
 texture = SubResource("PlaceholderTexture2D_qbox3")
+
+[node name="Bulletpos" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(53, 0)
