@@ -1,36 +1,36 @@
 [gd_scene load_steps=5 format=3 uid="uid://dteobuff2unhx"]
 
 [ext_resource type="Texture2D" uid="uid://b7f76lxgo2h73" path="res://icon.svg" id="1_3x7ki"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_6s35o"]
-[ext_resource type="PackedScene" uid="uid://butqdnf54nauh" path="res://bullet.tscn" id="2_k4y5x"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_vimf4"]
+[ext_resource type="PackedScene" uid="uid://butqdnf54nauh" path="res://scenes/bullet.tscn" id="2_7fbmn"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbox3"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(252, 388)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(-47, -145)
-script = ExtResource("1_6s35o")
-Bullet = ExtResource("2_k4y5x")
+script = ExtResource("1_vimf4")
+Bullet = ExtResource("2_7fbmn")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
 position = Vector2(-22, 32)
 rotation = -1.57341
 scale = Vector2(0.682379, 0.558597)
 polygon = PackedVector2Array(10.2429, 7.19345, 46.8181, 35.9533, 83, 7, 83, 64, 49.6229, 95.039, 11, 66)
 
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Icon" type="Sprite2D" parent="player"]
 position = Vector2(-0.141149, 0.244937)
 rotation = 1.57125
 scale = Vector2(0.38664, 0.380623)
 texture = ExtResource("1_3x7ki")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(25, 0)
 rotation = 1.56536
 scale = Vector2(-4, -56)
 texture = SubResource("PlaceholderTexture2D_qbox3")
 
-[node name="Bulletpos" type="Marker2D" parent="CharacterBody2D"]
+[node name="Bulletpos" type="Marker2D" parent="player"]
 position = Vector2(53, 0)
