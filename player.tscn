@@ -1,36 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dteobuff2unhx"]
+[gd_scene load_steps=6 format=3 uid="uid://dteobuff2unhx"]
 
-[ext_resource type="Texture2D" uid="uid://b7f76lxgo2h73" path="res://icon.svg" id="1_3x7ki"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_vimf4"]
+[ext_resource type="Script" path="res://src/player.gd" id="1_aa8c7"]
 [ext_resource type="PackedScene" uid="uid://butqdnf54nauh" path="res://scenes/bullet.tscn" id="2_7fbmn"]
+[ext_resource type="Texture2D" uid="uid://d6154r8nj664" path="res://assets/art/player_icon.png" id="3_4uff5"]
+[ext_resource type="Texture2D" uid="uid://cfltyeoqjtfdp" path="res://assets/art/Sprite-0002.png" id="4_f1stk"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbox3"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(252, 388)
+position = Vector2(524, 352)
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(-47, -145)
-script = ExtResource("1_vimf4")
+position = Vector2(-61, -143)
+script = ExtResource("1_aa8c7")
 Bullet = ExtResource("2_7fbmn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
-position = Vector2(-22, 32)
+position = Vector2(-32, 27)
 rotation = -1.57341
 scale = Vector2(0.682379, 0.558597)
-polygon = PackedVector2Array(10.2429, 7.19345, 46.8181, 35.9533, 83, 7, 83, 64, 49.6229, 95.039, 11, 66)
+polygon = PackedVector2Array(46.8831, 5.52026, 62.9955, 9.15216, 64.4877, -3.37451, 73.2805, -3.34644, 87.8967, 14.6023, 89.3392, 25.3481, 80.5311, 32.4808, 79.0388, 45.0075, 83.3701, 75.4548, 73.0813, 89.7436, 64.2617, 102.247, 51.0688, 103.995, 32.0102, 107.515, 59.9113, 80.7505, 59.9534, 61.0584, 43.8603, 48.4756, 43.8334, 61.007, 33.5676, 64.5546, 8.71994, 34.0417, 23.4281, 9.02582)
 
 [node name="Icon" type="Sprite2D" parent="player"]
-position = Vector2(-0.141149, 0.244937)
-rotation = 1.57125
-scale = Vector2(0.38664, 0.380623)
-texture = ExtResource("1_3x7ki")
+position = Vector2(-4, -9)
+rotation = 0.000961022
+scale = Vector2(1.9639, 2.09211)
+texture = ExtResource("3_4uff5")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(25, 0)
 rotation = 1.56536
 scale = Vector2(-4, -56)
 texture = SubResource("PlaceholderTexture2D_qbox3")
+
+[node name="Sprite-0002" type="Sprite2D" parent="player"]
+position = Vector2(166, -1)
+texture = ExtResource("4_f1stk")
 
 [node name="Bulletpos" type="Marker2D" parent="player"]
 position = Vector2(53, 0)

@@ -1,0 +1,6 @@
+- Make an enemy without movement but health
+- make slide mechanics for player
+-
+- make a example level 
+- add varialbes nedded for gun control
+- 

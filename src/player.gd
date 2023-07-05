@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var Bullet: PackedScene
 @export var actual_rate = 0.2
 var timer = 0
-var arrow = load("res://resources/art/arrow.png")
+var arrow = load("res://assets/art/arrow.png")
 
 
 
